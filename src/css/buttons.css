@@ -1,0 +1,14 @@
+.btn-pbt {
+  background-color: #8064A2 !important;
+  border-color: #8064A2 !important;
+  box-shadow: none !important;
+}
+
+.btn-pbt:hover,
+.btn-pbt:active,
+.btn-pbt:visited,
+.btn-pbt:focus {
+  background-color: #6331d8 !important;
+  border-color: #6331d8 !important;
+  box-shadow: none !important;
+}
