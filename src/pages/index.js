@@ -1,5 +1,5 @@
 import * as React from "react"
-import WebFont from 'webfontloader';
+//import WebFont from 'webfontloader';
 import { useEffect } from "react"
 import Navbar from '../components/navbar' 
 import Footer from '../components/footer.js' 
@@ -10,18 +10,45 @@ import graduation from '../images/graduation.png'
 import house from '../images/house.png'
 import manager from '../images/manager.png'
 import treasure from '../images/treasure.png'
+import { Button } from 'react-bootstrap'
+import '../css/fonts.css'
+import adventureMapImage from '../images/AdventureMap.svg'
+import { navigate } from 'gatsby'
 
 const pageStyles = {
   margin: 0,
   padding: 0,
   color: "#232129",
-  fontFamily: "Montserrat, sans-serif",
+  fontFamily: "Lato, sans-serif",
   display: 'flex',
   flexDirection: 'column'
 }
 
+const landingWrapper = {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'space-between'
+}
+
+const landingHeaderAndText = {
+  width: '50%',
+  paddingLeft: '10%'
+}
+
+const landingHeader = {
+  color: "#6331d8",
+  fontWeight: "medium"
+}
+
+const landingImage = {
+  width:'40%',
+  paddingRight: '10%'
+}
+
 const firstWrapper = {
-  paddingTop: 250,
+  paddingTop: 360,
   color: "#6331d8",
   fontWeight: "medium"
 }
@@ -36,7 +63,6 @@ const headingAccentStyles = {
 }
 
 const descriptionStyle = {
-  width: '50%',
   color: "#232129",
   fontSize: 18,
   marginTop: 20,
@@ -44,6 +70,7 @@ const descriptionStyle = {
   lineHeight: 1.25,
   fontWeight: 'light'
 }
+
 const desktopReasonsToCode = {
   paddingLeft: '10%',
   paddingRight: '10%',
@@ -53,7 +80,6 @@ const desktopReasonsToCode = {
   justifyContent: 'center',
   flexWrap: 'wrap'
 }
-
 
 
 const reasonWhyStyle = {
@@ -91,6 +117,7 @@ var reasonImages = [
   manager,
   treasure  
 ]
+
 const reasonsToCode = [
   {
    reason: 'High Salaries',
@@ -120,10 +147,15 @@ const reasonsToCode = [
 ]
 
 
-
-
 // markup
 const IndexPage = () => {
+  
+  /*
+  let WebFont
+  if (typeof window !== 'undefined') {
+    ;(async () => (WebFont = await import('webfontloader')))()
+  }
+  
   
   useEffect(() => {
     WebFont.load({
@@ -132,8 +164,7 @@ const IndexPage = () => {
       }
     });
   }, []);
-  
-
+  */
 
 
   const { height } = useWindowDimensions();
@@ -141,24 +172,22 @@ const IndexPage = () => {
     <div style={pageStyles}>
       <title>Dream Coding Institute</title>
       <div style={{height: height}}>
-        <Navbar/>
-        <div style={{paddingLeft: '10%'}}>
-          <h1 style={firstWrapper}>          
-            Free Coding Classes
-            <br />
-          </h1>
+        <Navbar />
+        <div style = {landingWrapper}>
+          <div style={landingHeaderAndText}>
+            <h1 style={landingHeader}>          
+              Free Coding Classes
+              <br />
+            </h1>
           <p style={descriptionStyle}>By going through our 4 level curriculum, you'll learn to code confidently, develop intricate projects, and be prepared for the technical interview for software engineering internships.</p>
+          </div>
+          <img src= {adventureMapImage} style= {landingImage}/>
         </div>
       </div>
 
       <div style = {{displayjustifyContent: 'center'}}>
         <h1 style={headingAccentStyles}>Why Software Engineering?</h1>
         <br />
-        {/* Go ahead and actually use the map function to map these. Much better choice. 
-          * Each reason just has an icon, a title, and a description the reasonsToCode style
-          * should just make it so that it can be horizontal or wrap using flex wrap
-          * and each individual reason has its own style thing that organizes it similarly
-          */}
         <div style={desktopReasonsToCode}>
           {reasonsToCode.map(reason => (
             <div style={reasonWhyStyle}>
@@ -172,11 +201,12 @@ const IndexPage = () => {
         </div>
       </div>
 
+      <div style={{paddingTop: 200}}>
       <LevelDisplay/>
-
-      <button style = {{width: 100, height: 50, alignSelf: 'center', marginBottom: 100}}>
+      </div>
+      <Button className="btn-pbt" onClick={() => navigate("/enroll")} style = {{textAlign: 'center', padding: 0, width: 100, height: 50, alignSelf: 'center', marginTop: 20, marginBottom: 100}}>
         Enroll Now
-      </button>
+      </Button>
 
       <Footer/>
     </div>

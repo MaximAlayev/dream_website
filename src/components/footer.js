@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { useMediaQuery } from 'react-responsive'
-import cloud from '../images/cloud.png'
 
 const desktopFooter = {
   margin: 0,
@@ -15,16 +14,6 @@ const desktopFooter = {
   color: 'white'
 }
 
-const mobileNavbar = {
-  margin: 0,
-  padding: 0,
-  height: 250,
-  width: '75%',
-  backgroundRepeat: 'no-repeat',
-  display: 'flex',
-  float: 'right',
-  backgroundImage: `url(${cloud})`
-}
 
 const navbarStyles = {
   padding: 0,
@@ -32,7 +21,7 @@ const navbarStyles = {
   color: 'white',
   fontWeight: 'medium',
   fontSize: 16,
-  fontFamily: "Montserrat, sans-serif",
+  fontFamily: "Lato, sans-serif",
   textDecoration: 'none'
 }
 
@@ -41,7 +30,6 @@ const Footer = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 700px)'
   })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   if (isDesktopOrLaptop)
   {

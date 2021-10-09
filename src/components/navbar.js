@@ -7,15 +7,18 @@ const desktopNavbar = {
   margin: 0,
   padding: 0,
   maxWidth: '75%',
-  minWidth: 525,
-  height: 250,
+  minWidth: 700,
+  height: 350,
   backgroundRepeat: 'no-repeat',
   display: 'flex',
   float: 'right',
   justifyContent: 'space-evenly',
   flexDirection: 'row',
-  backgroundImage: `url(${cloud})`
+  backgroundImage: `url(${cloud})`,
+  backgroundSize: 'contain',
+  backgroundPosition: 'top right'
 }
+
 
 const mobileNavbar = {
   margin: 0,
@@ -25,16 +28,18 @@ const mobileNavbar = {
   backgroundRepeat: 'no-repeat',
   display: 'flex',
   float: 'right',
-  backgroundImage: `url(${cloud})`
+  backgroundImage: `url(${cloud})`,
+  backgroundSize: 'contain',
+  backgroundPosition: 'top right'
 }
 
 const navbarStyles = {
   color: "#6331d8",
   fontWeight: 'medium',
-  paddingTop: 35,
-  paddingLeft: 65,
+  paddingTop: 20,
+  paddingLeft: 80,
   fontSize: 16,
-  fontFamily: "Montserrat, sans-serif",
+  fontFamily: "Lato, sans-serif",
   textDecoration: 'none'
 }
 
@@ -43,15 +48,13 @@ const Navbar = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 700px)'
   })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   if (isDesktopOrLaptop)
   {
     return (
       <div>
         <ul style = {desktopNavbar}>
-          <Link style={navbarStyles} to="/about">About</Link>
-          <Link style={navbarStyles} to="/classes">Classes</Link>
+          <Link style={navbarStyles} to="/schedule">Schedule</Link>
           <Link style={navbarStyles} to="/contact">Contact Us</Link>
         </ul>
       </div>
@@ -62,6 +65,7 @@ const Navbar = () => {
     //mobile navbar
     return (
       <div style = {mobileNavbar}>
+        Mobile
       </div>
     )
   }

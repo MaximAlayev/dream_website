@@ -14,7 +14,6 @@ const headingAccentStyles = {
 }
 
 const levelShowcaseWrapper = {
-  paddingTop: 200,
   height: 700,
   textAlign: 'center',
   display: 'flex',
@@ -39,7 +38,7 @@ const levelDisplayStyle = {
   justifyContent: 'flex-start',
   height: '80%',
   width: '80%',
-  backgroundColor: '#dddddd',
+  backgroundColor: '#f5f5f5',
   marginLeft: '10%',
   marginRight: '10%',
 }
@@ -48,7 +47,7 @@ const levelDisplayStyle = {
 const levels = [
   {
     experienceLevel: "No experience required",
-    description: "In level 1, you'll get you comfortable with Python syntax and complete several small projects.",
+    description: "In level 1, you'll get comfortable with Python syntax and complete several small projects.",
   },
   {
     experienceLevel: "Basic Python understanding required",
@@ -57,14 +56,13 @@ const levels = [
   },
   {
     experienceLevel: "Advanced Python understanding required",
-    description: "In level 3, you'll learn various algorithms and programming strategies to do well in the technical portion software engineering interviews. You'll have worked on various programming assigments that test your abiltiy to put software architecture into practice.",
+    description: "In level 3, you'll learn various algorithms and programming strategies to do well in the technical portion software engineering interviews. You'll also work on various programming assigments where you will learn about and apply software architectural practices.",
   },
   {
     experienceLevel: "Solid understanding of algorithms, data structures, and dynamic programming required",
-    description: "In level 4, you'll learn several advanced computer science topics that will come up in your university career, and be ready for both the behavioral and technical portions for interviews."
+    description: "In level 4, you'll learn several advanced computer science topics that will come up in your university career, and be highly confident in your ability to perform in both the behavioral and technical portions for interviews."
   }
 ]
-
 
 
 
